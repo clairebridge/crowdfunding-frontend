@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import "./NavBar.css";
 import Logo from '../assets/icons/logo.svg'
 
+// this is a comment
 function NavBar() {
     return (
     <nav className= 'navbar'>
