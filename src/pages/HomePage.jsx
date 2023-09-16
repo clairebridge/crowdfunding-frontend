@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import ProjectCard from "../components/ProjectCard";
 import useProjects from "../hooks/use-projects";
 import "./HomePage.css";
@@ -7,12 +6,10 @@ function HomePage() {
     const { projects } = useProjects();
     return (
         <div id="project-list"> 
-            <button type="button">Click Me</button>
             {projects.map((projectData, key) => {
                 return <ProjectCard key={key} projectData={projectData} />;
             })}
         </div>
-    
     );
 }
     

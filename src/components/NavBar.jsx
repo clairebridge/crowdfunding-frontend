@@ -15,6 +15,7 @@ function NavBar() {
                     <li>
                         <Link to="/">Home</Link>
                         <Link to="/login">Log In</Link>
+                        <Link to="/create-project">Create Project</Link>
                     </li>
                 </ul>  
             </div>   
