@@ -9,7 +9,10 @@ function ProjectCard(props) {
         <div className="project-card">
             <Link to={projectLink}>
                 <img src={projectData.image} />
-                <h3>{projectData.title}</h3>      
+                <h3>{projectData.title}</h3>
+                {/* <button type="submit">
+                Delete Project
+                </button>       */}
             </Link>    
         </div>  
         );

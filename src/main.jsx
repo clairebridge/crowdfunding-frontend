@@ -6,6 +6,8 @@ import ProjectPage from"./pages/ProjectPage.jsx";
 import NavBar from"./components/NavBar.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import CreateProject from "./pages/CreateProject.jsx"
+import CreatePledge from "./pages/CreatePledge.jsx"
+import { AuthProvider } from "./components/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +17,8 @@ const router = createBrowserRouter([
         {path: "/", element: <HomePage />},
         { path: "/login", element: <LoginPage /> },
         { path: "/project/:id", element: <ProjectPage /> },
-        { path: "/create-project", element: <CreateProject /> },    
+        { path: "/create-project", element: <CreateProject /> }, 
+        { path: "/create-pledge", element: <CreatePledge /> },      
     ],
   },
 ]);
@@ -23,7 +26,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* Here we wrap our app in the router provider so they render */}
-    <RouterProvider router={router} />  
+    <AuthProvider>
+      <RouterProvider router={router} />  
+    </AuthProvider>
   </React.StrictMode>
 );
