@@ -7,16 +7,27 @@ function pledgeProjectForm() {
     const [pledgeDetails, setPledgeDetails] = useState({
         amount: "",
         comment: "",
-        anonymous: "",
+        anonymous: false,
         project: "",
     });
 
     const handleChange = (event) => {
-        const { id, value } = event.target;
-        setPledgeDetails((prevpledgeDetails) => ({
-            ...prevpledgeDetails,
-            [id]: value,
-        }));
+        if (event.target.id === 'anonymous'){
+            setPledgeDetails((prevpledgeDetails) => ({
+                ...prevpledgeDetails,
+                anonymous: event.target.checked,
+            }));
+            console.log(pledgeDetails.anonymous, event.target.checked)
+        }
+        else {
+            const { id, value } = event.target;
+            console.log(id, value)
+            setPledgeDetails((prevpledgeDetails) => ({
+                ...prevpledgeDetails,
+                [id]: value,
+            }));
+        }
+
     };
 
     const handleSubmit = (event) => {
@@ -34,6 +45,7 @@ function pledgeProjectForm() {
 
     return (
     <form>
+        {JSON.stringify(pledgeDetails)}
         <div>
             <label htmlFor="amount">Amount:</label>
             <input type="number" id="amount" placeholder="Enter amount" onChange={handleChange} />
@@ -46,7 +58,7 @@ function pledgeProjectForm() {
         </div>
         <div>
             <label htmlFor="anonymous">anonymous:</label>
-            <input type="boolean" id="anonymous" placeholder="anonymous" onChange={handleChange}/>
+            <input type="checkbox" id="anonymous" placeholder="anonymous" onChange={handleChange}/>
             
         </div>
         <div>

@@ -1,7 +1,7 @@
 const token = window.localStorage.getItem("token")
 
 async function postPledge (amount, comment, anonymous, project) {
-    const url =`${import.meta.env.VITE_API_URL}/projects/`;
+    const url =`${import.meta.env.VITE_API_URL}/pledges/`;
     const response =await fetch(url,{
         method:"POST",
     // We need to tell the server that we are sending JSON dataso we set the Content-Type header to application/jsonheaders:
@@ -12,7 +12,7 @@ async function postPledge (amount, comment, anonymous, project) {
     body:JSON.stringify({
         "amount": amount,
         "comment": comment,
-        "anonymous": false,
+        "anonymous": anonymous,
         "project": project,
         //TODO - get the real date here
         //what format does the backend want for the date? we can do 

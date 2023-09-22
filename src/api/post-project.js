@@ -10,6 +10,7 @@ async function postProject (title, description, goal, image) {
         "Authorization": `Token ${token}`
     },
     body:JSON.stringify({
+        
         "title": title,
         "description": description,
         "goal": goal,
@@ -17,7 +18,7 @@ async function postProject (title, description, goal, image) {
         "is_open": true,
         //TODO - get the real date here
         //what format does the backend want for the date? we can do 
-        "date_created": "2024-04-08T14:28:23Z"
+        "date_created": new Date()
     }),
 });
 

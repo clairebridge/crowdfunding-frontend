@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
-import useProject from "../hooks/use-projects";
+import useProject from "../hooks/use-project.js";
 
 function ProjectPage() {
-
     const { id } = useParams();
     const { project, isLoading, error } = useProject(id);
-
+    console.log("console is logging error", project, isLoading, error)
     if (isLoading) {
         return (<p>loading...</p>)
     }
@@ -23,7 +22,7 @@ function ProjectPage() {
             {project.pledges.map((pledgeData, key) => {
                 return (
                 <li key={key}>
-                    {pledgeData.amount} from {pledgeData.supporter}
+                    {pledgeData.amount} from {pledgeData.anonymous ? "anonymous" : pledgeData.id}
                     </li>
                 );
             })}
