@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project.js";
+import "./ProjectPage.css";
 
 function ProjectPage() {
     const { id } = useParams();
@@ -13,7 +14,7 @@ function ProjectPage() {
     }
 
     return (
-    <div>
+    <div className="pledges">
         <h2>{project.title}</h2>
         <h3>Created at: {project.date_created}</h3>
         <h3>{`Status: ${project.is_open}`}</h3>

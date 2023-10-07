@@ -20,14 +20,14 @@ function NavBar() {
             <div className='nav-elements'>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/" className='nav-items'>Home</Link>
                         {auth.token ? (
                             <>
-                            <Link to="/" onClick={handleLogout}>
+                            <Link to="/" onClick={handleLogout} className='nav-items'>
                             Log Out
                             </Link>
-                            <Link to="/create-project">Create Project</Link>
-                            <Link to="/create-pledge">Pledge</Link>
+                            <Link to="/create-project" className='nav-items'>Create Project</Link>
+                            <Link to="/create-pledge" className='nav-items'>Pledge</Link>
                             </>
                         
                             ) : (
